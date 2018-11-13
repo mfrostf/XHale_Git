@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    //Medical App Color Scheme
+    <color name="grey">#e7e3da</color>
+    <color name="skyBlue">#ace9da</color>
+    <color name="blueGreen">#66cfc3</color>
+    <color name="fadedGreen">#8fbbac</color>
+    <color name="blue">#5dc4e1</color>
+    <color name="lightGrey">#e7f3f1</color>
+    <color name="bgTint">#f4f7f9</color>
+    <color name="white">#ffffff</color>
+    <color name="darkGrey">#707172</color>
+</resources>
