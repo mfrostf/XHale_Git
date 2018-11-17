@@ -6,70 +6,103 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/lblLastRecord"
+        android:id="@+id/txtConfirmNewPass"
+        android:layout_width="287dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/transparentboxb"
+        android:inputType="textPassword"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/guideline14"
+        app:layout_constraintTop_toBottomOf="@+id/lblConfirmNewPass" />
+
+    <TextView
+        android:id="@+id/txtNewPass"
         android:layout_width="287dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="ABCABCABC"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/transparentboxb"
+        android:inputType="textPassword"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline14"
-        tools:layout_editor_absoluteY="188dp" />
+        app:layout_constraintTop_toBottomOf="@+id/lblNewpass" />
 
     <TextView
-        android:id="@+id/lblFullName"
+        android:id="@+id/txtOldPass"
         android:layout_width="287dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
-        android:text="Last name, first name m."
+        android:layout_marginTop="8dp"
+        android:background="@drawable/transparentboxb"
+        android:inputType="textPassword"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="@+id/guideline14"
-        app:layout_constraintTop_toBottomOf="@+id/patient" />
+        app:layout_constraintTop_toBottomOf="@+id/lbloldpass" />
 
     <TextView
-        android:id="@+id/patient"
+        android:id="@+id/lbloldpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Patient"
+        android:layout_marginTop="48dp"
+        android:text="Old Password"
         android:textAllCaps="true"
         android:textColor="@color/blue"
-        android:textStyle="bold"
+        android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/guideline14"
         app:layout_constraintTop_toTopOf="@+id/guideline15" />
 
     <TextView
-        android:id="@+id/lastrecord"
+        android:id="@+id/lblNewpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Last Record"
+        android:layout_marginTop="20dp"
+        android:text="Confirm New Password"
         android:textAllCaps="true"
         android:textColor="@color/blue"
-        app:layout_constraintBottom_toTopOf="@+id/lblLastRecord"
         app:layout_constraintStart_toStartOf="@+id/guideline14"
-        app:layout_constraintTop_toBottomOf="@+id/lblFullName" />
+        app:layout_constraintTop_toBottomOf="@+id/txtConfirmNewPass" />
+
+    <TextView
+        android:id="@+id/lblConfirmNewPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="New Password"
+        android:textAllCaps="true"
+        android:textColor="@color/blue"
+        app:layout_constraintStart_toStartOf="@+id/guideline14"
+        app:layout_constraintTop_toBottomOf="@+id/txtOldPass" />
 
     <Button
-        android:id="@+id/btnAddRecord"
-        android:layout_width="137dp"
+        android:id="@+id/btnCancel"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:background="@drawable/greenbtn"
-        android:text="Add Record"
+        android:layout_marginBottom="76dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginStart="160dp"
+        android:background="@drawable/redbtn"
+        android:text="Cancel"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
-        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="@+id/guideline14" />
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/greenbtn"
+        android:text="Confirm"
+        app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintStart_toStartOf="@+id/guideline14" />
 
     <android.support.constraint.Guideline
@@ -99,4 +132,15 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.12522046" />
+
+    <TextView
+        android:id="@+id/lblChangePass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change Password"
+        android:textColor="@color/blue"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline15"
+        app:layout_constraintStart_toStartOf="@+id/guideline14" />
 </android.support.constraint.ConstraintLayout>
