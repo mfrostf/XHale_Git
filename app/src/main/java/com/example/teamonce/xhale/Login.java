@@ -73,7 +73,7 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<DoctorAccount> call, Response<DoctorAccount> response) {
                     DoctorAccount.doctorAccount = response.body();
-                    Intent i = new Intent(Login.this, DoctorSettings.class);
+                    Intent i = new Intent(Login.this, HomeDoctor.class);
                     startActivity(i);
                 }
 
@@ -88,7 +88,7 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<PatientAccount> call, Response<PatientAccount> response) {
                     PatientAccount.patientAccount = response.body();
-                    Intent i = new Intent(Login.this, AcctSettings.class);
+                    Intent i = new Intent(Login.this, HomePatient.class);
                     startActivity(i);
                 }
 

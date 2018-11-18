@@ -20,6 +20,8 @@
         <activity android:name=".DoctorSettings"/>
         <activity android:name=".AcctSettings"/>
         <activity android:name=".HomePatient"/>
+        <activity android:name=".HomeDoctor"/>
+        <activity android:name=".ChangePassword"/>
         <activity android:name=".testxml"></activity>
     </application>
 
