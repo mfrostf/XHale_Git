@@ -17,6 +17,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.Toast;
+
+import com.example.teamonce.xhale.Data.RetrofitClient;
+import com.example.teamonce.xhale.Model.PatientAccount;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BaseDrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -53,6 +61,28 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
             }
         });
 
+    }
+
+    public void cmdLogout(View view){
+        Call<Boolean> call = RetrofitClient.getInstance().getAPI().Logout(PatientAccount.patientAccount.ID);
+        call.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                try{
+                    if(response.body()){
+                        startActivity(new Intent(getApplicationContext(), Login.class));
+                    }
+                }
+                catch(Exception e){
+                    Toast.makeText(BaseDrawerActivity.this, e.toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Boolean> call, Throwable t) {
+
+            }
+        });
     }
 
     @Override

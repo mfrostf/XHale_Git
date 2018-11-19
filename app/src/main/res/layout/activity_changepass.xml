@@ -27,6 +27,13 @@
         app:layout_constraintStart_toStartOf="@+id/guideline14"
         app:layout_constraintTop_toBottomOf="@+id/lblNewpass" />
 
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.18734793" />
+
     <EditText
         android:id="@+id/txtNewPass"
         android:layout_width="0dp"
@@ -53,7 +60,7 @@
         android:id="@+id/lbloldpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="70dp"
         android:text="Old Password"
         android:textAllCaps="true"
         android:textColor="@color/blue"
@@ -140,12 +147,13 @@
         android:id="@+id/lblChangePass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         android:text="Change Password"
         android:textColor="@color/blue"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideline15"
-        app:layout_constraintStart_toStartOf="@+id/guideline14" />
+        app:layout_constraintStart_toStartOf="@+id/guideline14"
+        app:layout_constraintTop_toTopOf="@+id/guideline15" />
 
     <EditText
         android:id="@+id/txtOldPass"

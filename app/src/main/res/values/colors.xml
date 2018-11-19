@@ -14,4 +14,5 @@
     <color name="bgTint">#f4f7f9</color>
     <color name="white">#ffffff</color>
     <color name="darkGrey">#707172</color>
+    <color name="red">#e95b5e</color>
 </resources>

@@ -22,6 +22,16 @@
         android:layout_gravity="start"
         app:menu="@menu/drawer_doctor"
     >
+
+        <Button
+            android:id="@+id/navP_Logout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:background="@color/red"
+            android:onClick="cmdLogout"
+            android:text="Log Out" />
+
     </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>
