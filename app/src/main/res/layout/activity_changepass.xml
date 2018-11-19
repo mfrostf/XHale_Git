@@ -5,35 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <EditText
         android:id="@+id/txtConfirmNewPass"
-        android:layout_width="287dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/transparentboxb"
-        android:inputType="textPassword"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline14"
-        app:layout_constraintTop_toBottomOf="@+id/lblConfirmNewPass" />
-
-    <TextView
-        android:id="@+id/txtNewPass"
-        android:layout_width="287dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/transparentboxb"
-        android:inputType="textPassword"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline12"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline14"
-        app:layout_constraintTop_toBottomOf="@+id/lblNewpass" />
-
-    <TextView
-        android:id="@+id/txtOldPass"
-        android:layout_width="287dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
@@ -41,11 +15,39 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/transparentboxb"
+        android:ems="10"
+        android:hint="****"
         android:inputType="textPassword"
-        android:textSize="18sp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline14"
-        app:layout_constraintTop_toBottomOf="@+id/lbloldpass" />
+        app:layout_constraintTop_toBottomOf="@+id/lblNewpass" />
+
+    <EditText
+        android:id="@+id/txtNewPass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/transparentboxb"
+        android:ems="10"
+        android:hint="****"
+        android:inputType="textPassword"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline14"
+        app:layout_constraintTop_toBottomOf="@+id/lblConfirmNewPass" />
 
     <TextView
         android:id="@+id/lbloldpass"
@@ -63,18 +65,18 @@
         android:id="@+id/lblNewpass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="Confirm New Password"
         android:textAllCaps="true"
         android:textColor="@color/blue"
         app:layout_constraintStart_toStartOf="@+id/guideline14"
-        app:layout_constraintTop_toBottomOf="@+id/txtConfirmNewPass" />
+        app:layout_constraintTop_toBottomOf="@+id/txtNewPass" />
 
     <TextView
         android:id="@+id/lblConfirmNewPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:text="New Password"
         android:textAllCaps="true"
         android:textColor="@color/blue"
@@ -102,6 +104,7 @@
         android:layout_marginStart="20dp"
         android:background="@drawable/greenbtn"
         android:text="Confirm"
+        android:onClick="cmdConfirm"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintStart_toStartOf="@+id/guideline14" />
 
@@ -143,4 +146,25 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="@+id/guideline14" />
+
+    <EditText
+        android:id="@+id/txtOldPass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/transparentboxb"
+        android:ems="10"
+        android:hint="****"
+        android:inputType="textPassword"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintStart_toStartOf="@+id/guideline14"
+        app:layout_constraintTop_toBottomOf="@+id/lbloldpass" />
 </android.support.constraint.ConstraintLayout>
