@@ -8,13 +8,13 @@ import com.example.teamonce.xhale.Model.DoctorAccount;
 
 import org.w3c.dom.Text;
 
-public class HomeDoctor extends AppCompatActivity {
+public class HomeDoctor extends BaseDrawerActivityDoctor {
     TextView txtDoctorName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homedoctor);
+        getLayoutInflater().inflate(R.layout.activity_homedoctor, frameLayout);
 
         txtDoctorName = (TextView) findViewById(R.id.lblDoctorName);
         txtDoctorName.setText("Dr. "+DoctorAccount.doctorAccount.LastName+", "+DoctorAccount.doctorAccount.FirstName);

@@ -22,7 +22,6 @@
         <activity android:name=".HomePatient"/>
         <activity android:name=".HomeDoctor"/>
         <activity android:name=".ChangePassword"/>
-        <activity android:name=".testxml"></activity>
     </application>
 
 </manifest>

@@ -7,13 +7,13 @@ import android.widget.TextView;
 
 import com.example.teamonce.xhale.Model.PatientAccount;
 
-public class HomePatient extends AppCompatActivity {
+public class HomePatient extends BaseDrawerActivity {
     TextView txtFullName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepatient);
+        getLayoutInflater().inflate(R.layout.activity_homepatient, frameLayout);
 
         txtFullName = (TextView) findViewById(R.id.lblFullName);
         txtFullName.setText(PatientAccount.patientAccount.LastName+", "+PatientAccount.patientAccount.FirstName+" "+PatientAccount.patientAccount.MiddleName.charAt(0)+".");

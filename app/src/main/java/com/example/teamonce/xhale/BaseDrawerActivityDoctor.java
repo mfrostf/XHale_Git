@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -18,7 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-public class BaseDrawerActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class BaseDrawerActivityDoctor extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -27,7 +26,7 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.basedrawerlayout);
+        setContentView(R.layout.basedrawerlayoutdoctor);
 
         frameLayout = (FrameLayout) findViewById(R.id.frameLayout);
 
@@ -44,8 +43,8 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
                     return false;
                 }
                 switch (id){
-                    case R.id.navP_Home : startActivity(new Intent(getApplicationContext(), HomePatient.class)); break;
-                    case R.id.navP_Settings : startActivity(new Intent(getApplicationContext(), AcctSettings.class)); break;
+                    case R.id.navD_Home : startActivity(new Intent(getApplicationContext(), HomeDoctor.class)); break;
+                    case R.id.navD_Settings : startActivity(new Intent(getApplicationContext(), DoctorSettings.class)); break;
                     default: break;
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
@@ -95,7 +94,7 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
         navigationView.setLayoutParams(layoutParams);
     }
 
-    public void NavigateP(View v){
+    public void NavigateD(View v){
         drawerLayout.openDrawer(Gravity.LEFT);
     }
 

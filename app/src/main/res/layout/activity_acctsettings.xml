@@ -293,14 +293,14 @@
         app:layout_constraintGuide_percent="0.91" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/navP_1"
         android:layout_width="41dp"
         android:layout_height="30dp"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:onClick="NavigateP"
         android:text="test"
-        android:onClick="Navigate"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="parent" />
 
