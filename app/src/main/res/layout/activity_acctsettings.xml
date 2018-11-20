@@ -115,52 +115,43 @@
 
     <TextView
         android:id="@+id/age"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="74dp"
-        android:layout_marginRight="74dp"
         android:text="Age :"
         android:textAllCaps="true"
         android:textColor="@color/blueGreen"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/txtAge"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/birthdate" />
 
     <TextView
         android:id="@+id/birthdate"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
         android:text="Birthdate :"
         android:textAllCaps="true"
         android:textColor="@color/blueGreen"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/txtBday"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/contactno" />
 
     <TextView
         android:id="@+id/contactno"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginRight="11dp"
         android:text="Contact No. :"
         android:textAllCaps="true"
         android:textColor="@color/blueGreen"
         android:textSize="14sp"
-        app:layout_constraintEnd_toStartOf="@+id/txtContact"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
@@ -251,8 +242,8 @@
 
     <EditText
         android:id="@+id/txtAge"
-        android:layout_width="0dp"
-        android:layout_height="26dp"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:background="@drawable/transparentboxw"
         android:ems="10"
@@ -269,8 +260,8 @@
 
     <EditText
         android:id="@+id/txtBday"
-        android:layout_width="0dp"
-        android:layout_height="26dp"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:background="@drawable/transparentboxw"
         android:ems="10"
@@ -287,8 +278,8 @@
 
     <EditText
         android:id="@+id/txtContact"
-        android:layout_width="0dp"
-        android:layout_height="26dp"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
         android:background="@drawable/transparentboxw"
         android:ems="10"

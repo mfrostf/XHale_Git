@@ -40,7 +40,7 @@ public class Login extends AppCompatActivity {
                         if (account != null) {
                             GetAccount(account);
                         } else {
-                            Toast.makeText(Login.this, "Login Failed.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Login.this, "Incorrect username or password.", Toast.LENGTH_LONG).show();
                         }
                     }catch (Exception e){
                         Toast.makeText(Login.this, e.toString(), Toast.LENGTH_LONG).show();
