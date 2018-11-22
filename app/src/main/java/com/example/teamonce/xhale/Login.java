@@ -36,11 +36,18 @@ public class Login extends AppCompatActivity {
                 @Override
                 public void onResponse(Call<Account> call, Response<Account> response) {
                     try {
-                        Account account = response.body();
-                        if (account != null) {
-                            GetAccount(account);
+                        Account.account = response.body();
+                        if (Account.account != null) {
+                            if(Account.account.AccessLevel.equals("DOCTOR")){
+                                Intent i = new Intent(Login.this, HomeDoctor.class);
+                                startActivity(i);
+                            }else if(Account.account.AccessLevel.equals("PATIENT")){
+                                Intent i = new Intent(Login.this, HomePatient.class);
+                                startActivity(i);
+                            }
+                            //GetAccount();
                         } else {
-                            Toast.makeText(Login.this, "Login Failed.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Login.this, "Incorrect Username or Password..", Toast.LENGTH_LONG).show();
                         }
                     }catch (Exception e){
                         Toast.makeText(Login.this, e.toString(), Toast.LENGTH_LONG).show();
@@ -66,9 +73,9 @@ public class Login extends AppCompatActivity {
         return false;
     }
 
-    public void GetAccount(Account account){
-        if(account.AccessLevel.equals("DOCTOR")){
-            Call<DoctorAccount> call = RetrofitClient.getInstance().getAPI().GetDoctorLogin(account.ID);
+    public void GetAccount(){
+        if(Account.account.AccessLevel.equals("DOCTOR")){
+            Call<DoctorAccount> call = RetrofitClient.getInstance().getAPI().GetDoctorLogin(Account.account.ID);
             call.enqueue(new Callback<DoctorAccount>() {
                 @Override
                 public void onResponse(Call<DoctorAccount> call, Response<DoctorAccount> response) {
@@ -82,8 +89,8 @@ public class Login extends AppCompatActivity {
 
                 }
             });
-        }else if(account.AccessLevel.equals("PATIENT")){
-            Call<PatientAccount> call = RetrofitClient.getInstance().getAPI().GetPatientLogin(account.ID);
+        }else if(Account.account.AccessLevel.equals("PATIENT")){
+            Call<PatientAccount> call = RetrofitClient.getInstance().getAPI().GetPatientLogin(Account.account.ID);
             call.enqueue(new Callback<PatientAccount>() {
                 @Override
                 public void onResponse(Call<PatientAccount> call, Response<PatientAccount> response) {

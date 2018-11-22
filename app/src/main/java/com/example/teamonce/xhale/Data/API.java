@@ -34,4 +34,7 @@ public interface API {
     @POST("Account/UpdatePatient")
     Call<Boolean> UpdatePatient(@Body PatientAccount patient);
 
+    @POST("Account/AddPatient")
+    Call<Boolean> AddPatient(@Body PatientAccount patient);
+
 }

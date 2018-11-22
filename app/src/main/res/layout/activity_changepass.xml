@@ -99,6 +99,7 @@
         android:layout_marginStart="160dp"
         android:background="@drawable/redbtn"
         android:text="Cancel"
+        android:onClick="cmdCancel"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintStart_toStartOf="@+id/guideline14" />
 

@@ -9,6 +9,7 @@ public class Account {
     public String LastName;
     public String Contact;
     public String AccessLevel;
+    public static Account account;
 
     public Account(int ID, String username, String password, String firstName, String middleName, String lastName, String contact, String accessLevel) {
         this.ID = ID;
