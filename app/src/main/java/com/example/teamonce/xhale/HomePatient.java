@@ -24,7 +24,8 @@ public class HomePatient extends BaseDrawerActivity {
         getLayoutInflater().inflate(R.layout.activity_homepatient, frameLayout);
 
         txtFullName = (TextView) findViewById(R.id.lblFullName);
-        GetAccount();
+        txtFullName.setText(PatientAccount.patientAccount.getLastName()+", "+PatientAccount.patientAccount.getFirstName()+" "+PatientAccount.patientAccount.getMiddleName().charAt(0)+".");
+        //GetAccount();
     }
 
     public void GetAccount(){

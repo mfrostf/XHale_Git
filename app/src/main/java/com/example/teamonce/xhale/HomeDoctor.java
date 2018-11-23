@@ -24,7 +24,8 @@ public class HomeDoctor extends BaseDrawerActivityDoctor {
         getLayoutInflater().inflate(R.layout.activity_homedoctor, frameLayout);
 
         txtDoctorName = (TextView) findViewById(R.id.lblDoctorName);
-        GetAccount();
+        txtDoctorName.setText("Dr. "+DoctorAccount.doctorAccount.getLastName()+", "+DoctorAccount.doctorAccount.getFirstName()+" "+DoctorAccount.doctorAccount.getMiddleName().charAt(0));
+        //GetAccount();
     }
 
     public void GetAccount(){

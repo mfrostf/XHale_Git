@@ -38,14 +38,14 @@ public class Login extends AppCompatActivity {
                     try {
                         Account.account = response.body();
                         if (Account.account != null) {
-                            if(Account.account.AccessLevel.equals("DOCTOR")){
+                            /*if(Account.account.AccessLevel.equals("DOCTOR")){
                                 Intent i = new Intent(Login.this, HomeDoctor.class);
                                 startActivity(i);
                             }else if(Account.account.AccessLevel.equals("PATIENT")){
                                 Intent i = new Intent(Login.this, HomePatient.class);
                                 startActivity(i);
-                            }
-                            //GetAccount();
+                            }*/
+                            GetAccount();
                         } else {
                             Toast.makeText(Login.this, "Incorrect Username or Password..", Toast.LENGTH_LONG).show();
                         }
@@ -74,7 +74,7 @@ public class Login extends AppCompatActivity {
     }
 
     public void GetAccount(){
-        if(Account.account.AccessLevel.equals("DOCTOR")){
+        if(Account.account.getAccessLevel().equals("DOCTOR")){
             Call<DoctorAccount> call = RetrofitClient.getInstance().getAPI().GetDoctorLogin(Account.account.ID);
             call.enqueue(new Callback<DoctorAccount>() {
                 @Override
@@ -89,7 +89,7 @@ public class Login extends AppCompatActivity {
 
                 }
             });
-        }else if(Account.account.AccessLevel.equals("PATIENT")){
+        }else if(Account.account.getAccessLevel().equals("PATIENT")){
             Call<PatientAccount> call = RetrofitClient.getInstance().getAPI().GetPatientLogin(Account.account.ID);
             call.enqueue(new Callback<PatientAccount>() {
                 @Override

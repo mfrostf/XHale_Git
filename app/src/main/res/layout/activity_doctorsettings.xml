@@ -56,7 +56,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="35dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="16dp"
@@ -67,8 +66,7 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
-        app:layout_constraintStart_toEndOf="@+id/btnUpdateInfo"
-        app:layout_constraintTop_toBottomOf="@+id/txtAge" />
+        app:layout_constraintStart_toEndOf="@+id/btnUpdateInfo" />
 
     <Button
         android:id="@+id/btnUpdateInfo"
@@ -76,15 +74,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="35dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/greenbtn"
-        android:text="Update Info"
+        android:onClick="cmdEdit"
+        android:text="Edit"
         android:textColor="@color/lightGrey"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline11"
-        app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/txtAge" />
+        app:layout_constraintStart_toStartOf="@+id/guideline8" />
 
     <TextView
         android:id="@+id/dor"
@@ -103,34 +100,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline8"
         app:layout_constraintTop_toBottomOf="@+id/username" />
-
-    <TextView
-        android:id="@+id/age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="20dp"
-        android:text="Age :"
-        android:textAllCaps="true"
-        android:textColor="@color/blueGreen"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/birthdate" />
-
-    <TextView
-        android:id="@+id/birthdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="20dp"
-        android:text="Birthdate :"
-        android:textAllCaps="true"
-        android:textColor="@color/blueGreen"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/guideline8"
-        app:layout_constraintTop_toBottomOf="@+id/contactno" />
 
     <TextView
         android:id="@+id/contactno"
@@ -214,46 +183,6 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toEndOf="@+id/username"
         app:layout_constraintTop_toBottomOf="@+id/lblFullName" />
-
-    <EditText
-        android:id="@+id/txtAge"
-        android:layout_width="180dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/transparentboxw"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:paddingLeft="10dp"
-        android:paddingTop="2dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="2dp"
-        android:text="do da math"
-        android:textColor="@color/darkGrey"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toBottomOf="@+id/txtBday" />
-
-    <EditText
-        android:id="@+id/txtBday"
-        android:layout_width="180dp"
-        android:layout_height="26dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/transparentboxw"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:paddingLeft="10dp"
-        android:paddingTop="2dp"
-        android:paddingRight="10dp"
-        android:paddingBottom="2dp"
-        android:text="03-July-1975"
-        android:textColor="@color/darkGrey"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toBottomOf="@+id/txtContact" />
 
     <EditText
         android:id="@+id/txtContact"
