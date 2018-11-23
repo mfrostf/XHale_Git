@@ -15,4 +15,6 @@
     <color name="white">#ffffff</color>
     <color name="darkGrey">#707172</color>
     <color name="red">#e95b5e</color>
+
+    <color name="txtboxborder">#6ddacf</color>>
 </resources>
