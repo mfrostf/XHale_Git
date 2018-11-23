@@ -88,7 +88,7 @@
 
     <TextView
         android:id="@+id/dor"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -106,7 +106,7 @@
 
     <TextView
         android:id="@+id/age"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -120,7 +120,7 @@
 
     <TextView
         android:id="@+id/birthdate"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
@@ -134,11 +134,11 @@
 
     <TextView
         android:id="@+id/contactno"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="27dp"
+        android:layout_marginTop="28dp"
         android:text="Contact No. :"
         android:textAllCaps="true"
         android:textColor="@color/blueGreen"
