@@ -71,6 +71,7 @@
         android:layout_marginBottom="32dp"
         android:background="@drawable/greenbtn"
         android:text="View List of Patients"
+        android:onClick="cmdViewListPatients"
         app:layout_constraintBottom_toTopOf="@+id/guideline13"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="@+id/guideline14" />
@@ -86,6 +87,7 @@
         android:layout_marginBottom="24dp"
         android:background="@drawable/greenbtn"
         android:text="Add Patient"
+        android:onClick="cmdAddPatient"
         app:layout_constraintBottom_toTopOf="@+id/btnViewList"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintHorizontal_bias="0.0"

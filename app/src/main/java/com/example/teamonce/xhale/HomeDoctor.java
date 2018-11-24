@@ -1,7 +1,9 @@
 package com.example.teamonce.xhale;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.teamonce.xhale.Data.RetrofitClient;
@@ -26,6 +28,16 @@ public class HomeDoctor extends BaseDrawerActivityDoctor {
         txtDoctorName = (TextView) findViewById(R.id.lblDoctorName);
         txtDoctorName.setText("Dr. "+DoctorAccount.doctorAccount.getLastName()+", "+DoctorAccount.doctorAccount.getFirstName()+" "+DoctorAccount.doctorAccount.getMiddleName().charAt(0));
         //GetAccount();
+    }
+
+    public void cmdAddPatient(View view){
+        Intent i = new Intent(HomeDoctor.this, AddPatient.class);
+        startActivity(i);
+    }
+
+    public void cmdViewListPatients(View view){
+        Intent i = new Intent(HomeDoctor.this, ListOfPatient.class);
+        startActivity(i);
     }
 
     public void GetAccount(){

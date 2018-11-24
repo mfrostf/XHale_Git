@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -54,6 +55,7 @@ public class BaseDrawerActivityDoctor extends AppCompatActivity implements Navig
                 switch (id){
                     case R.id.navD_Home : startActivity(new Intent(getApplicationContext(), HomeDoctor.class)); break;
                     case R.id.navD_Settings : startActivity(new Intent(getApplicationContext(), DoctorSettings.class)); break;
+                    case R.id.navD_AddPatient : startActivity(new Intent(getApplicationContext(), AddPatient.class)); break;
                     default: break;
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);
@@ -70,7 +72,9 @@ public class BaseDrawerActivityDoctor extends AppCompatActivity implements Navig
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 try{
                     if(response.body()){
-                        startActivity(new Intent(getApplicationContext(), Login.class));
+                        Intent intent = new Intent(getApplicationContext(), Login.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
                     }
                 }
                 catch(Exception e){

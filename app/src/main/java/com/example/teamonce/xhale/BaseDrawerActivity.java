@@ -70,7 +70,9 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 try{
                     if(response.body()){
-                        startActivity(new Intent(getApplicationContext(), Login.class));
+                        Intent intent = new Intent(getApplicationContext(), Login.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
                     }
                 }
                 catch(Exception e){
