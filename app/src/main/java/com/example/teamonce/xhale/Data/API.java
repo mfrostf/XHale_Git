@@ -4,6 +4,8 @@ import com.example.teamonce.xhale.Model.Account;
 import com.example.teamonce.xhale.Model.DoctorAccount;
 import com.example.teamonce.xhale.Model.PatientAccount;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -36,5 +38,8 @@ public interface API {
 
     @POST("Account/AddPatient")
     Call<Boolean> AddPatient(@Body PatientAccount patient);
+
+    @GET("Account/GetAllPatients")
+    Call<List<PatientAccount>> GetAllPatients();
 
 }
