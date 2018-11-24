@@ -13,6 +13,10 @@
             android:id="@+id/navD_Settings"
             android:icon="@drawable/ic_account_box_24dp"
             android:title="Settings" />
+        <item
+            android:id="@+id/navD_AddPatient"
+            android:icon="@drawable/ic_person_add_24dp"
+            android:title="Add Patient" />
     </group>
 
     <!--<item android:title="Communicate">-->
