@@ -1,5 +1,6 @@
 package com.example.teamonce.xhale;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Toast;
 
 import com.example.teamonce.xhale.Data.RetrofitClient;
 import com.example.teamonce.xhale.Model.Account;
+import com.example.teamonce.xhale.Model.PatientAccount;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,24 +30,36 @@ public class ChangePassword extends AppCompatActivity {
 
     public void cmdConfirm(View v){
         if(Check()){
-            if(txtNewPass.getText().toString().equals(txtConfirmPass.getText().toString())){
-                Call<Boolean> call = RetrofitClient.getInstance().getAPI().ChangePassword(Account.account.ID,txtOldPass.getText().toString(),txtNewPass.getText().toString());
-                call.enqueue(new Callback<Boolean>() {
-                    @Override
-                    public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                        if(response.body()){
-                            Toast.makeText(ChangePassword.this,"Password Changed.", Toast.LENGTH_LONG).show();
-                            finish();
-                        }
-                    }
+            if(!txtOldPass.getText().toString().equals(txtNewPass.getText().toString())){
+                if(txtNewPass.getText().toString().equals(txtConfirmPass.getText().toString())){
+                    if(txtNewPass.getText().toString().length()>=8) {
+                        Call<Boolean> call = RetrofitClient.getInstance().getAPI().ChangePassword(Account.account.ID, txtOldPass.getText().toString(), txtNewPass.getText().toString());
+                        call.enqueue(new Callback<Boolean>() {
+                            @Override
+                            public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                                if (response.body()) {
+                                    Toast.makeText(ChangePassword.this, "Password Changed.", Toast.LENGTH_LONG).show();
+                                    if(PatientAccount.patientAccount!=null) {
+                                        finish();
+                                    }else{
+                                        GetAccount();
+                                    }
+                                }
+                            }
 
-                    @Override
-                    public void onFailure(Call<Boolean> call, Throwable t) {
+                            @Override
+                            public void onFailure(Call<Boolean> call, Throwable t) {
 
+                            }
+                        });
+                    }else {
+                        Toast.makeText(this, "Password should have a length more than 7 characters.", Toast.LENGTH_LONG).show();
                     }
-                });
+                }else {
+                    Toast.makeText(this, "Passwords do not match.", Toast.LENGTH_LONG).show();
+                }
             }else{
-                Toast.makeText(this,"Passwords do not match.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this,"Please do not enter the same Password.",Toast.LENGTH_LONG).show();
             }
         }else
             Toast.makeText(this,"Fill the required fields.",Toast.LENGTH_LONG).show();
@@ -60,5 +74,22 @@ public class ChangePassword extends AppCompatActivity {
 
     public void cmdCancel(View view){
         finish();
+    }
+
+    public void GetAccount(){
+        Call<PatientAccount> call = RetrofitClient.getInstance().getAPI().GetPatientLogin(Account.account.ID);
+        call.enqueue(new Callback<PatientAccount>() {
+            @Override
+            public void onResponse(Call<PatientAccount> call, Response<PatientAccount> response) {
+                PatientAccount.patientAccount = response.body();
+                Intent i = new Intent(ChangePassword.this, HomePatient.class);
+                startActivity(i);
+            }
+
+            @Override
+            public void onFailure(Call<PatientAccount> call, Throwable t) {
+
+            }
+        });
     }
 }

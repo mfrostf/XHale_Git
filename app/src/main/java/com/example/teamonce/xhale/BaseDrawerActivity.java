@@ -20,6 +20,7 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.example.teamonce.xhale.Data.RetrofitClient;
+import com.example.teamonce.xhale.Model.DoctorAccount;
 import com.example.teamonce.xhale.Model.PatientAccount;
 
 import retrofit2.Call;
@@ -70,6 +71,7 @@ public class BaseDrawerActivity extends AppCompatActivity implements NavigationV
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 try{
                     if(response.body()){
+                        PatientAccount.patientAccount = null;
                         Intent intent = new Intent(getApplicationContext(), Login.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);

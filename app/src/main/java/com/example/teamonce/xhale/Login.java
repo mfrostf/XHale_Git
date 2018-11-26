@@ -38,14 +38,12 @@ public class Login extends AppCompatActivity {
                     try {
                         Account.account = response.body();
                         if (Account.account != null) {
-                            /*if(Account.account.AccessLevel.equals("DOCTOR")){
-                                Intent i = new Intent(Login.this, HomeDoctor.class);
+                            if(txtPassword.getText().toString().equals("changeme")){
+                                Intent i = new Intent(Login.this, ChangePassword.class);
                                 startActivity(i);
-                            }else if(Account.account.AccessLevel.equals("PATIENT")){
-                                Intent i = new Intent(Login.this, HomePatient.class);
-                                startActivity(i);
-                            }*/
-                            GetAccount();
+                            }else {
+                                GetAccount();
+                            }
                         } else {
                             Toast.makeText(Login.this, "Incorrect Username or Password..", Toast.LENGTH_LONG).show();
                         }

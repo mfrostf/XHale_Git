@@ -72,6 +72,7 @@ public class BaseDrawerActivityDoctor extends AppCompatActivity implements Navig
             public void onResponse(Call<Boolean> call, Response<Boolean> response) {
                 try{
                     if(response.body()){
+                        DoctorAccount.doctorAccount = null;
                         Intent intent = new Intent(getApplicationContext(), Login.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
