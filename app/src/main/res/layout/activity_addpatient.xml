@@ -152,6 +152,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:buttonTint="@color/txtboxborder"
+            android:checked="true"
             android:text="Male"
             android:textColor="@color/txtboxborder"
             android:textSize="16sp" />
@@ -255,7 +256,7 @@
         tools:text="Gender" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAdd"
         android:layout_width="149dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -264,7 +265,8 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:background="@drawable/greenbtn"
-        android:text="Submit"
+        android:text="Add Patient"
+        android:onClick="cmdAdd"
         app:layout_constraintEnd_toStartOf="@+id/guideline24"
         app:layout_constraintStart_toStartOf="@+id/guideline25"
         app:layout_constraintTop_toBottomOf="@+id/spinnerCopdLevel" />

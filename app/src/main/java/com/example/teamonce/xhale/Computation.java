@@ -20,6 +20,9 @@ public class Computation {
         if (today.get(Calendar.DAY_OF_YEAR) < dob.get(Calendar.DAY_OF_YEAR)){
             age--;
         }
+        if(today.get(Calendar.DAY_OF_MONTH) < dob.get(Calendar.DAY_OF_MONTH)){
+            age--;
+        }
 
         Integer ageInt = new Integer(age);
         String ageS = ageInt.toString();
@@ -38,7 +41,7 @@ public class Computation {
             case 7: return "July";
             case 8: return "August";
             case 9: return "September";
-            case 10: return "Octorber";
+            case 10: return "October";
             case 11: return "November";
             case 12: return "December";
             default: return "";
@@ -65,7 +68,7 @@ public class Computation {
             case "July": return "07";
             case "August": return "08";
             case "September": return "09";
-            case "Octorber": return "10";
+            case "October": return "10";
             case "November": return "11";
             case "December": return "12";
             default: return "";

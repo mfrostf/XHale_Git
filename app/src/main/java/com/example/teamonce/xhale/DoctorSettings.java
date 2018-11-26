@@ -16,6 +16,8 @@ import com.example.teamonce.xhale.Model.PatientAccount;
 
 import org.w3c.dom.Text;
 
+import java.util.regex.Pattern;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -25,6 +27,8 @@ public class DoctorSettings extends BaseDrawerActivityDoctor {
     EditText txtUsername,txtEmail,txtContact;
     Button cmdEdit;
     DoctorAccount doctorAccount;
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    String contactPattern = "\\d{11}";
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -69,26 +73,52 @@ public class DoctorSettings extends BaseDrawerActivityDoctor {
             doctorAccount = DoctorAccount.doctorAccount;
             doctorAccount.setContact(txtContact.getText().toString());
             doctorAccount.setEmail(txtEmail.getText().toString());
-            Call<Boolean> call = RetrofitClient.getInstance().getAPI().UpdateDoctor(doctorAccount);
-            call.enqueue(new Callback<Boolean>() {
-                @Override
-                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
-                    if(response.body()){
-                        Toast.makeText(DoctorSettings.this, "Info Updated.", Toast.LENGTH_SHORT).show();
-                        cmdEdit.setText("Edit");
-                        DoctorAccount.doctorAccount = doctorAccount;
-                        setFocusable();
-                        setVariables();
-                    }else{
-                        Toast.makeText(DoctorSettings.this, "There was a problem with the server.", Toast.LENGTH_SHORT).show();
-                    }
-                }
+            if(Check()) {
+                if(ValidatePattern()) {
+                    Call<Boolean> call = RetrofitClient.getInstance().getAPI().UpdateDoctor(doctorAccount);
+                    call.enqueue(new Callback<Boolean>() {
+                        @Override
+                        public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                            if (response.body()) {
+                                Toast.makeText(DoctorSettings.this, "Info Updated.", Toast.LENGTH_SHORT).show();
+                                cmdEdit.setText("Edit");
+                                DoctorAccount.doctorAccount = doctorAccount;
+                                setFocusable();
+                                setVariables();
+                            } else {
+                                Toast.makeText(DoctorSettings.this, "There was a problem with the server.", Toast.LENGTH_SHORT).show();
+                            }
+                        }
 
-                @Override
-                public void onFailure(Call<Boolean> call, Throwable t) {
+                        @Override
+                        public void onFailure(Call<Boolean> call, Throwable t) {
 
+                        }
+                    });
                 }
-            });
+            }else{
+                Toast.makeText(this,"Fields cannot be null.",Toast.LENGTH_LONG).show();
+            }
         }
+    }
+
+    public boolean ValidatePattern(){
+        if(!txtEmail.getText().toString().matches(emailPattern)){
+            Toast.makeText(this,"Incorrect pattern for Email ex Email: example@gmail.com.",Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if(!txtContact.getText().toString().matches(contactPattern)){
+            Toast.makeText(this,"Incorrect pattern for Contact. ex. Contact: 09123456789.",Toast.LENGTH_LONG).show();
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean Check() {
+        if(!txtEmail.getText().toString().isEmpty()&&!txtEmail.getText().toString().equals(" ")&&!txtContact.getText().toString().isEmpty()&&!txtContact.getText().toString().equals(" ")){
+            return true;
+        }
+        return false;
     }
 }
